@@ -1,10 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
+import ClaritySDK from "clarity-sdk";
 
 export default function Home() {
+  const handleClick = async () => {
+    if (typeof window !== "undefined") {
+      const wallet = await ClaritySDK.connectWallet("eternl");
+      console.log(wallet);
+    }
+  };
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <button onClick={handleClick}>Connect eternl Wallet</button>
         <Image
           className={styles.logo}
           src="/next.svg"
