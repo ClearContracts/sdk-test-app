@@ -7,15 +7,95 @@ import ClaritySDK from "clarity-sdk";
 export default function Home() {
   const handleClick = async () => {
     if (typeof window !== "undefined") {
-      const wallet = await ClaritySDK.connectWallet("eternl");
-      console.log(wallet);
+      await ClaritySDK.initialize(
+        "preview",
+        process.env.NEXT_PUBLIC_CLARITY_SDK_API_KEY || "",
+        "Justin'sSweetDAO"
+      );
+      const wallet = await ClaritySDK.connectWallet("lace");
+      const proposals = await ClaritySDK.getProposals();
+      console.log(proposals);
+      const stakes = await ClaritySDK.getStakes();
+      console.log(stakes);
+      /*
+      const proposalId = await ClaritySDK.createTreasuryWithdrawalProposal(
+        stakes[0].txOutRef,
+        "addr_test1qqwvhaj2hc9rjh2ame6vgmn8ngrgcku54zk9l3svvwcy06h83aj4rvjhtf2kzc5fwy3l5x9d0rzt4qdq6qp9vcwl6f5sr2szds",
+        "",
+        "",
+        1000000,
+        "Test",
+        "Test Description"
+      );
+      console.log(proposalId);
+      */
+      /*
+      const proposalId =
+        await ClaritySDK.createUpdateGovernanceParametersProposal(
+          stakes[0].txOutRef,
+          { execute: 1, create: 1, toVoting: 1, vote: 1, cosign: 1 },
+          {
+            draftTime: 1800000,
+            votingTime: 1800001,
+            lockingTime: 1800000,
+            executingTime: 1800000,
+            minStakeVotingTime: 1800000,
+            votingTimeRangeMaxWidth: 1,
+          },
+          1,
+          1,
+          "Test update governance parameter proposal",
+          "test description"
+        );
+      console.log(proposalId);
+      */
+      const proposalId = await ClaritySDK.createNoEffectProposal(
+        stakes[0].txOutRef,
+        "Test no effect proposal",
+        "test description"
+      );
+      console.log(proposalId);
+      /*
+      const stakeTxId = await ClaritySDK.createStake(5000000);
+      console.log(stakeTxId);
+      */
+      /*
+      const stakeTxId = await ClaritySDK.editStake(
+        stakes[stakes.length - 1].txOutRef,
+        -3000000
+      );
+      console.log(stakeTxId);
+      */
+      /*
+      const stakeTxId = await ClaritySDK.deleteStake(
+        stakes[stakes.length - 1].txOutRef
+      );
+      console.log(stakeTxId);
+      */
+      /*
+      const voteTxId = await ClaritySDK.voteOnProposal(
+        proposals[proposals.length - 1].txOutRef,
+        proposals[proposals.length - 1].proposalId,
+        [stakes[stakes.length - 3].txOutRef],
+        1
+      );
+      console.log(voteTxId);
+      */
+      /*
+      const retractVoteTxId = await ClaritySDK.retractVote(
+        proposals[proposals.length - 1].txOutRef,
+        proposals[proposals.length - 1].proposalId,
+        1
+      );
+      console.log(retractVoteTxId);
+      */
     }
   };
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <button onClick={handleClick}>Connect eternl Wallet</button>
+        <button onClick={handleClick}>Connect lace Wallet</button>
         <Image
           className={styles.logo}
           src="/next.svg"
