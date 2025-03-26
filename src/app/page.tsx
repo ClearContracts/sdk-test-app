@@ -10,10 +10,11 @@ import CreateUpdateGovernanceParametersProposalButton from "./createUpdateGovern
 import CreateStakeButton from "./createStakeButton";
 import EditStakeButton from "./editStakeButton";
 import GetProposalsButton from "./getProposalsButton";
-import CreateNoEffectProposalButton from "./createNoEffectProposal";
+import CreateNoEffectProposalButton from "./createNoEffectProposalButton";
 import DeleteStakeButton from "./deleteStakeButton";
 import VoteOnProposalButton from "./voteOnProposalButton";
 import RetractVoteButton from "./retractVoteButton";
+import UnlockStakesButton from "./createUnlockStakesButton";
 
 export default function Home() {
   const [stakes, setStakes] = useState<Stake[]>([]);
@@ -41,6 +42,7 @@ export default function Home() {
         <CreateNoEffectProposalButton stakes={stakes} />
         <VoteOnProposalButton proposals={proposals} stakes={stakes} />
         <RetractVoteButton proposals={proposals} />
+        <UnlockStakesButton stakes={stakes} proposals={proposals} />
       </main>
     </div>
   );
