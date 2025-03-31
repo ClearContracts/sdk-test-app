@@ -24,8 +24,9 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 Steps:
 
-1. Delete `package-lock.json` and `node_modules`
-2. `npm i`
+1. Ensure `"@claritydao/clarity-sdk": "file:../clarity-sdk/claritydao-clarity-sdk-0.1.0-alpha.tgz"` is added under dependencies in `package.json`
+2. Delete `package-lock.json` and `node_modules`
+3. `npm i`
 
 ## Learn More
 

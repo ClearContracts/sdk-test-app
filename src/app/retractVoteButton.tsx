@@ -1,4 +1,4 @@
-import ClaritySDK, { type AgoraProposal, type Stake } from "clarity-sdk";
+import ClaritySDK, { type AgoraProposal } from "@claritydao/clarity-sdk";
 
 interface Props {
   proposals: AgoraProposal[];

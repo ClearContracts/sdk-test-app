@@ -1,4 +1,4 @@
-import ClaritySDK, { type Stake } from "clarity-sdk";
+import ClaritySDK from "@claritydao/clarity-sdk";
 
 const CreateStakeButton = () => {
   const handleClick = async () => {

@@ -1,7 +1,10 @@
 "use client";
 
 import styles from "./page.module.css";
-import ClaritySDK, { type AgoraProposal, type Stake } from "clarity-sdk";
+import ClaritySDK, {
+  type AgoraProposal,
+  type Stake,
+} from "@claritydao/clarity-sdk";
 import CreateTreasuryWithdrawalProposalButton from "./createTreasuryWithdrawalProposalButton";
 import { useState } from "react";
 import GetStakesButton from "./getStakesButton";

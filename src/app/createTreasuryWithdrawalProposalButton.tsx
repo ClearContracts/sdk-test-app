@@ -1,4 +1,4 @@
-import ClaritySDK, { type Stake } from "clarity-sdk";
+import ClaritySDK, { type Stake } from "@claritydao/clarity-sdk";
 
 interface Props {
   stakes: Stake[];

@@ -1,4 +1,4 @@
-import ClaritySDK, { type Stake } from "clarity-sdk";
+import ClaritySDK from "@claritydao/clarity-sdk";
 
 interface Props {
   setProposals: any;
