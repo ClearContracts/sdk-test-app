@@ -1,6 +1,7 @@
-import ClaritySDK from "@claritydao/clarity-sdk";
+import ClaritySDK, { type AgoraProposal } from "@claritydao/clarity-sdk";
 
 interface Props {
+  // @ts-ignore
   setProposals: any;
 }
 

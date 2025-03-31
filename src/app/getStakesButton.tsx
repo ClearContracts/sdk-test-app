@@ -1,6 +1,7 @@
 import ClaritySDK from "@claritydao/clarity-sdk";
 
 interface Props {
+  // @ts-ignore
   setStakes: any;
 }
 
