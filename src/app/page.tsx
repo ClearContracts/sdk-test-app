@@ -24,8 +24,13 @@ export default function Home() {
   const [proposals, setProposals] = useState<AgoraProposal[]>([]);
 
   useEffect(() => {
+    const network = process.env.NEXT_PUBLIC_CARDANO_NETWORK || "";
+    if (network !== "mainnet" && network !== "preview") {
+      console.error("Invalid network: " + network);
+      return;
+    }
     ClaritySDK.initialize(
-      "preview",
+      network,
       process.env.NEXT_PUBLIC_CLARITY_SDK_API_KEY || "",
       "MattTestOrg-TestnetDev"
     );
