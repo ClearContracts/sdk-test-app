@@ -1,7 +1,7 @@
 import ClaritySDK from "@claritydao/clarity-sdk";
 
 interface Props {
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setStakes: any;
 }
 

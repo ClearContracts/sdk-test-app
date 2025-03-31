@@ -1,7 +1,7 @@
-import ClaritySDK, { type AgoraProposal } from "@claritydao/clarity-sdk";
+import ClaritySDK from "@claritydao/clarity-sdk";
 
 interface Props {
-  // @ts-ignore
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setProposals: any;
 }
 
