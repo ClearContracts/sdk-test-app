@@ -32,7 +32,7 @@ export default function Home() {
     ClaritySDK.initialize(
       network,
       process.env.NEXT_PUBLIC_CLARITY_SDK_API_KEY || "",
-      "MattTestOrg-TestnetDev"
+      "Clarity"
     );
     ClaritySDK.connectWallet("lace");
   }, []);
