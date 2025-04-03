@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import ClaritySDK, {
+  type Networks,
   type AgoraProposal,
   type Stake,
 } from "@claritydao/clarity-sdk";
@@ -30,8 +31,7 @@ export default function Home() {
       return;
     }
     ClaritySDK.initialize(
-      network,
-      process.env.NEXT_PUBLIC_CLARITY_SDK_API_KEY || "",
+      process.env.NEXT_PUBLIC_BLOCKCHAIN_NETWORK as Networks,
       "Clarity"
     );
     ClaritySDK.connectWallet("lace");
