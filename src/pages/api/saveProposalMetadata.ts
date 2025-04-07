@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import ClaritySDK, { type Networks } from "@claritydao/clarity-sdk";
 
 ClaritySDK.initialize(
-  process.env.NEXT_PUBLIC_BLOCKCHAIN_NETWORK as Networks,
+  process.env.NEXT_PUBLIC_CARDANO_NETWORK as Networks,
   "Clarity"
 );
 

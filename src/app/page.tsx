@@ -34,7 +34,7 @@ export default function Home() {
         return;
       }
       await ClaritySDK.initialize(
-        process.env.NEXT_PUBLIC_BLOCKCHAIN_NETWORK as Networks,
+        process.env.NEXT_PUBLIC_CARDANO_NETWORK as Networks,
         "Clarity"
       );
       const wallet = await ClaritySDK.connectWallet("lace");
