@@ -10,7 +10,7 @@ const CreateNoEffectProposalButton = (props: Props) => {
 
   const handleClick = async () => {
     const proposalData = await ClaritySDK.createNoEffectProposal(
-      stakes[2].txOutRef
+      stakes[3].txOutRef
     );
     if (!proposalData) {
       console.error("Failed to create proposal");

@@ -11,7 +11,7 @@ const CreateUpdateGovernanceParametersProposalButton = (props: Props) => {
   const handleClick = async () => {
     const proposalData =
       await ClaritySDK.createUpdateGovernanceParametersProposal(
-        stakes[2].txOutRef,
+        stakes[3].txOutRef,
         { execute: 1, create: 1, toVoting: 1, vote: 1, cosign: 1 },
         {
           draftTime: 1800000,
