@@ -20,6 +20,7 @@ import VoteOnProposalButton from "./voteOnProposalButton";
 import RetractVoteButton from "./retractVoteButton";
 import UnlockStakesButton from "./createUnlockStakesButton";
 import { deriveStakeAddressFromRewardAddress } from "./deriveStakeAddressFromRewardAddress";
+import GetStakesBackendButton from "./getStakesBackendButton";
 
 export default function Home() {
   const [stakes, setStakes] = useState<Stake[]>([]);
@@ -37,7 +38,7 @@ export default function Home() {
         process.env.NEXT_PUBLIC_CARDANO_NETWORK as Networks,
         "Clarity"
       );
-      const wallet = await ClaritySDK.connectWallet("lace");
+      const wallet = await ClaritySDK.connectWallet("eternl");
       if (!wallet) {
         console.error("Wallet not connected");
         return;
@@ -71,6 +72,7 @@ export default function Home() {
         <VoteOnProposalButton proposals={proposals} stakes={stakes} />
         <RetractVoteButton proposals={proposals} />
         <UnlockStakesButton stakes={stakes} proposals={proposals} />
+        <GetStakesBackendButton setStakes={setStakes} />
       </main>
     </div>
   );
